@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[这是我使用hexo的第一个博客]]></title>
+      <url>http://dxian.github.io/2016/07/18/%E8%BF%99%E6%98%AF%E6%88%91%E4%BD%BF%E7%94%A8hexo%E5%8F%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      <content type="html"><![CDATA[<p>2014年的时候，我一直都在51xto发表文章。<br>但是总觉得不太爽，想搭建一个自己的博客。<br>后来，我使用boblog，刚搭建好时，还选了个漂这的模板，但实在是没什么玩的，把自己的博客迁上去后，就没再更新过了。<br>后来，玩过discuz，虽然主要是论坛，但我也弄了个漂亮的模板，把首页弄成了blog的样式，不过，总觉得缺了点什么，也许是太重了吧。<br>昨天，我又把搭建自己的博客提上了议程，使用wordpress搭了个博客，不过，还是觉得缺了些什么。<br>到底缺了点什么呢？<br><a id="more"></a><br>直到我突然想，为什么不把博客放在github上呢？然后接触了hexo，markdown。<br>我明白了，这就是我想要的。<br>geek精神！  markdown+git，写博客就像写代码一样，美不可言！</p>
+<p>主题选了好久…<br>最后选了NEXT，因为他的帮助文档写的太好了，一下就喜欢上了。而且它的侧边能显示目录结构，这对于写很长的文档的时候，是很有用的。</p>
+<p>接下来学习markdown语法，这真是一个很炫的东东。</p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
