@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="redis," />
+  <meta name="keywords" content="redis,subscribe,python," />
 
 
 
@@ -84,31 +84,37 @@
 
 
 
-<meta name="description" content="这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。
+<meta name="description" content="如果你不知道要到哪儿去，那通常你哪儿也去不了。 
+
+这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。
 1. 问题
 redis subscribe有时候会有死链，但server端该连接已经不存在。
 
 2. 复现方法
-在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。240s后，（因为server端的tcp-keepalive 设置的是120s），server">
+在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。240s后，（因为server端的tcp-">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python redis subscribe tcp keepalive（redis订阅保活）">
 <meta property="og:url" content="http://4it.cn/2016/07/21/python-redis-subscribe-tcp-keepalive/index.html">
 <meta property="og:site_name" content="大仙">
-<meta property="og:description" content="这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。
+<meta property="og:description" content="如果你不知道要到哪儿去，那通常你哪儿也去不了。 
+
+这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。
 1. 问题
 redis subscribe有时候会有死链，但server端该连接已经不存在。
 
 2. 复现方法
-在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。240s后，（因为server端的tcp-keepalive 设置的是120s），server">
-<meta property="og:updated_time" content="2016-07-21T08:49:42.000Z">
+在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。240s后，（因为server端的tcp-">
+<meta property="og:updated_time" content="2016-07-21T15:04:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python redis subscribe tcp keepalive（redis订阅保活）">
-<meta name="twitter:description" content="这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。
+<meta name="twitter:description" content="如果你不知道要到哪儿去，那通常你哪儿也去不了。 
+
+这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。
 1. 问题
 redis subscribe有时候会有死链，但server端该连接已经不存在。
 
 2. 复现方法
-在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。240s后，（因为server端的tcp-keepalive 设置的是120s），server">
+在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。240s后，（因为server端的tcp-">
 
 
 
@@ -230,16 +236,6 @@ redis subscribe有时候会有死链，但server端该连接已经不存在。
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            公益404
           </a>
         </li>
       
@@ -389,7 +385,9 @@ redis subscribe有时候会有死链，但server端该连接已经不存在。
       
 
       
-        <p>这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。</p>
+        <blockquote class="blockquote-center"><p>如果你不知道要到哪儿去，那通常你哪儿也去不了。 </p>
+</blockquote>
+<p>这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。</p>
 <h1 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h1><blockquote>
 <p>redis subscribe有时候会有死链，但server端该连接已经不存在。</p>
 </blockquote>
@@ -397,13 +395,21 @@ redis subscribe有时候会有死链，但server端该连接已经不存在。
 <p>在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。<br>240s后，（因为server端的tcp-keepalive 设置的是120s），server端因为保活无回应，关闭了该连接。<br>而client端一直保持一个established的连接，且一直保持，永不断开。</p>
 </blockquote>
 <h1 id="3-解决方法"><a href="#3-解决方法" class="headerlink" title="3. 解决方法"></a>3. 解决方法</h1><blockquote>
-<p>把py-redis版本升级到2.10.3后，该版本拥有socket-keepalive参数，能够在订阅后对该通道保活。</p>
+<p>把py-redis版本升级到2.10.3后，该版本拥有socket-keepalive参数，能够在订阅后对该通道保活。<br>配置参数如下：</p>
 </blockquote>
 <a id="more"></a>
-<p>参数如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">r=redis.StrictRedis(host=self.srvip,port=self.port,password=self.passwd,socket_connect_timeout=<span class="number">15</span>,socket_keepalive=<span class="keyword">True</span>,socket_keepalive_options=&#123;</div><div class="line">    socket.TCP_KEEPIDLE:<span class="number">120</span>,</div><div class="line">    socket.TCP_KEEPCNT:<span class="number">2</span>,</div><div class="line">    socket.TCP_KEEPINTVL:<span class="number">30</span></div><div class="line">    &#125;)</div><div class="line">rl=r.pubsub()</div><div class="line">rl.subscribe(self.subch)</div></pre></td></tr></table></figure></p>
-<h1 id="4-redis变更日志"><a href="#4-redis变更日志" class="headerlink" title="4. redis变更日志"></a>4. redis变更日志</h1><p>参考地址：<br>    <a href="https://github.com/andymccurdy/redis-py/blob/master/CHANGES" target="_blank" rel="external">https://github.com/andymccurdy/redis-py/blob/master/CHANGES</a></p>
-<p>该功能添加在2.10.0版本中：</p>
 <blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">r=redis.StrictRedis(host=self.srvip,port=self.port,password=self.passwd,socket_connect_timeout=<span class="number">15</span>,socket_keepalive=<span class="keyword">True</span>,socket_keepalive_options=&#123;</div><div class="line">            socket.TCP_KEEPIDLE:<span class="number">120</span>,</div><div class="line">            socket.TCP_KEEPCNT:<span class="number">2</span>,</div><div class="line">            socket.TCP_KEEPINTVL:<span class="number">30</span></div><div class="line">            &#125;)</div><div class="line">        rl=r.pubsub()</div><div class="line">        rl.subscribe(self.subch)</div></pre></td></tr></table></figure>
+<p>关键参数：<strong><code>socket_keepalive</code></strong>, <strong><code>socket_keepalive_options</code></strong><br><strong><code>socket_keepalive</code></strong>为<code>True</code>时代表开启TCP保活功能。<br><strong><code>socket_keepalive_options</code></strong>值是字典格式，有如下三个参数：</p>
+<ol>
+<li><code>socket.TCP_KEEPIDLE</code>: 空闲多少秒后开始检测 </li>
+<li><code>socket.TCP_KEEPCNT</code>: 检测的包数量</li>
+<li><code>socket.TCP_KEEPINTVL</code>: 检测包发送间隔</li>
+</ol>
+</blockquote>
+<h1 id="4-Redis变更日志"><a href="#4-Redis变更日志" class="headerlink" title="4. Redis变更日志"></a>4. Redis变更日志</h1><blockquote>
+<p>参考地址：<br>   <a href="https://github.com/andymccurdy/redis-py/blob/master/CHANGES" target="_blank" rel="external">https://github.com/andymccurdy/redis-py/blob/master/CHANGES</a></p>
+<p><strong>该功能添加在2.10.0版本中：</strong></p>
 <ul>
 <li>2.10.0<ul>
 <li>Added TCP Keep-alive support by passing use the socket_keepalive=True<br>option. Finer grain control can be achieved using the<br>socket_keepalive_options option which expects a dictionary with any of<br>the keys (socket.TCP_KEEPIDLE, socket.TCP_KEEPCNT, socket.TCP_KEEPINTVL)<br>and integers for values. Thanks Yossi Gottlieb.</li>
@@ -434,6 +440,10 @@ redis subscribe有时候会有死链，但server端该连接已经不存在。
         <div class="post-tags">
           
             <a href="/tags/redis/" rel="tag">#redis</a>
+          
+            <a href="/tags/subscribe/" rel="tag">#subscribe</a>
+          
+            <a href="/tags/python/" rel="tag">#python</a>
           
         </div>
       
@@ -555,7 +565,7 @@ redis subscribe有时候会有死链，但server端该连接已经不存在。
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -564,7 +574,7 @@ redis subscribe有时候会有死链，但server端该连接已经不存在。
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -576,12 +586,37 @@ redis subscribe有时候会有死链，但server端该连接已经不存在。
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="http://yangrong.blog.51cto.com" target="_blank" title="51CTO">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  51CTO
+                </a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://mingmings.org/" title="mingmings" target="_blank">mingmings</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
       </section>
@@ -593,7 +628,7 @@ redis subscribe有时候会有死链，但server端该连接已经不存在。
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-问题"><span class="nav-number">1.</span> <span class="nav-text">1. 问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-复现方法"><span class="nav-number">2.</span> <span class="nav-text">2. 复现方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-解决方法"><span class="nav-number">3.</span> <span class="nav-text">3. 解决方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-redis变更日志"><span class="nav-number">4.</span> <span class="nav-text">4. redis变更日志</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-问题"><span class="nav-number">1.</span> <span class="nav-text">1. 问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-复现方法"><span class="nav-number">2.</span> <span class="nav-text">2. 复现方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-解决方法"><span class="nav-number">3.</span> <span class="nav-text">3. 解决方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Redis变更日志"><span class="nav-number">4.</span> <span class="nav-text">4. Redis变更日志</span></a></li></ol></div>
             
           </div>
         </section>

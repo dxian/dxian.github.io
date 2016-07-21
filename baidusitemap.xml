@@ -3,16 +3,19 @@
 
 
     
-    
   <url>
     <loc>http://4it.cn/2016/07/21/python-redis-subscribe-tcp-keepalive/</loc>
-    <lastmod>2016-07-21T08:49:42.000Z</lastmod>
+    <lastmod>2016-07-21T15:04:27.000Z</lastmod>
     <data>
         <display>
         <title>python redis subscribe tcp keepalive（redis订阅保活）</title>
         <pubTime>2016-07-21T03:47:32.000Z</pubTime>
         
         <tag>redis</tag>
+         
+        <tag>subscribe</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -23,6 +26,7 @@
     </data>
     </url>
 
+    
     
   <url>
     <loc>http://4it.cn/2016/07/18/%E7%BB%88%E4%BA%8E%E6%8A%8A%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%A5%BD%E4%BA%86/</loc>

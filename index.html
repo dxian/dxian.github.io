@@ -220,16 +220,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            公益404
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
@@ -510,7 +500,9 @@
 
       
         
-          <p>这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。</p>
+          <blockquote class="blockquote-center"><p>如果你不知道要到哪儿去，那通常你哪儿也去不了。 </p>
+</blockquote>
+<p>这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。</p>
 <h1 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h1><blockquote>
 <p>redis subscribe有时候会有死链，但server端该连接已经不存在。</p>
 </blockquote>
@@ -518,7 +510,7 @@
 <p>在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。<br>240s后，（因为server端的tcp-keepalive 设置的是120s），server端因为保活无回应，关闭了该连接。<br>而client端一直保持一个established的连接，且一直保持，永不断开。</p>
 </blockquote>
 <h1 id="3-解决方法"><a href="#3-解决方法" class="headerlink" title="3. 解决方法"></a>3. 解决方法</h1><blockquote>
-<p>把py-redis版本升级到2.10.3后，该版本拥有socket-keepalive参数，能够在订阅后对该通道保活。</p>
+<p>把py-redis版本升级到2.10.3后，该版本拥有socket-keepalive参数，能够在订阅后对该通道保活。<br>配置参数如下：</p>
 </blockquote>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/07/21/python-redis-subscribe-tcp-keepalive/#more" rel="contents">
@@ -863,7 +855,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -872,7 +864,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -884,12 +876,37 @@
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="http://yangrong.blog.51cto.com" target="_blank" title="51CTO">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  51CTO
+                </a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://mingmings.org/" title="mingmings" target="_blank">mingmings</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
       </section>
