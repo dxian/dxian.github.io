@@ -29,9 +29,31 @@
     </entry>
     
     <entry>
-      <title><![CDATA[python redis subscribe tcp keepalive]]></title>
+      <title><![CDATA[python redis subscribe tcp keepalive（redis订阅保活）]]></title>
       <url>http://dxian.github.io/2016/07/21/python-redis-subscribe-tcp-keepalive/</url>
-      <content type="html"></content>
+      <content type="html"><![CDATA[<p>这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。</p>
+<h1 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h1><blockquote>
+<p>redis subscribe有时候会有死链，但server端该连接已经不存在。</p>
+</blockquote>
+<h1 id="2-复现方法"><a href="#2-复现方法" class="headerlink" title="2. 复现方法"></a>2. 复现方法</h1><blockquote>
+<p>在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。<br>240s后，（因为server端的tcp-keepalive 设置的是120s），server端因为保活无回应，关闭了该连接。<br>而client端一直保持一个established的连接，且一直保持，永不断开。</p>
+</blockquote>
+<h1 id="3-解决方法"><a href="#3-解决方法" class="headerlink" title="3. 解决方法"></a>3. 解决方法</h1><blockquote>
+<p>把py-redis版本升级到2.10.3后，该版本拥有socket-keepalive参数，能够在订阅后对该通道保活。</p>
+</blockquote>
+<a id="more"></a>
+<p>参数如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">r=redis.StrictRedis(host=self.srvip,port=self.port,password=self.passwd,socket_connect_timeout=<span class="number">15</span>,socket_keepalive=<span class="keyword">True</span>,socket_keepalive_options=&#123;</div><div class="line">    socket.TCP_KEEPIDLE:<span class="number">120</span>,</div><div class="line">    socket.TCP_KEEPCNT:<span class="number">2</span>,</div><div class="line">    socket.TCP_KEEPINTVL:<span class="number">30</span></div><div class="line">    &#125;)</div><div class="line">rl=r.pubsub()</div><div class="line">rl.subscribe(self.subch)</div></pre></td></tr></table></figure></p>
+<h1 id="4-redis变更日志"><a href="#4-redis变更日志" class="headerlink" title="4. redis变更日志"></a>4. redis变更日志</h1><p>参考地址：<br>    <a href="https://github.com/andymccurdy/redis-py/blob/master/CHANGES" target="_blank" rel="external">https://github.com/andymccurdy/redis-py/blob/master/CHANGES</a></p>
+<p>该功能添加在2.10.0版本中：</p>
+<blockquote>
+<ul>
+<li>2.10.0<ul>
+<li>Added TCP Keep-alive support by passing use the socket_keepalive=True<br>option. Finer grain control can be achieved using the<br>socket_keepalive_options option which expects a dictionary with any of<br>the keys (socket.TCP_KEEPIDLE, socket.TCP_KEEPCNT, socket.TCP_KEEPINTVL)<br>and integers for values. Thanks Yossi Gottlieb.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+]]></content>
     </entry>
     
     <entry>

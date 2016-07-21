@@ -404,7 +404,7 @@
               
                 
                 <a class="post-title-link" href="/2016/07/21/python-redis-subscribe-tcp-keepalive/" itemprop="url">
-                  python redis subscribe tcp keepalive
+                  python redis subscribe tcp keepalive（redis订阅保活）
                 </a>
               
             
@@ -439,7 +439,7 @@
 
           
           
-             <span id="/2016/07/21/python-redis-subscribe-tcp-keepalive/" class="leancloud_visitors" data-flag-title="python redis subscribe tcp keepalive">
+             <span id="/2016/07/21/python-redis-subscribe-tcp-keepalive/" class="leancloud_visitors" data-flag-title="python redis subscribe tcp keepalive（redis订阅保活）">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -462,9 +462,21 @@
 
       
         
-          
-            
-          
+          <p>这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。</p>
+<h1 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h1><blockquote>
+<p>redis subscribe有时候会有死链，但server端该连接已经不存在。</p>
+</blockquote>
+<h1 id="2-复现方法"><a href="#2-复现方法" class="headerlink" title="2. 复现方法"></a>2. 复现方法</h1><blockquote>
+<p>在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。<br>240s后，（因为server端的tcp-keepalive 设置的是120s），server端因为保活无回应，关闭了该连接。<br>而client端一直保持一个established的连接，且一直保持，永不断开。</p>
+</blockquote>
+<h1 id="3-解决方法"><a href="#3-解决方法" class="headerlink" title="3. 解决方法"></a>3. 解决方法</h1><blockquote>
+<p>把py-redis版本升级到2.10.3后，该版本拥有socket-keepalive参数，能够在订阅后对该通道保活。</p>
+</blockquote>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/21/python-redis-subscribe-tcp-keepalive/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -793,7 +805,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
