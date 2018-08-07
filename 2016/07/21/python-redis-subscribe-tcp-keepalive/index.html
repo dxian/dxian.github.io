@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>python redis subscribe tcp keepalive（redis订阅保活） | 大仙</title>
+  <title>python redis subscribe tcp keepalive（redis订阅保活） | 功夫猫</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="如果你不知道要到哪儿去，那通常你哪儿也去不了。   这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。 1. 问题 redis subscribe有时候会有死链，但server端该连接已经不存在。  2. 复现方法 在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。240s后，（因为server端的tcp-">
 <meta name="keywords" content="redis,subscribe,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python redis subscribe tcp keepalive（redis订阅保活）">
 <meta property="og:url" content="http://4it.cn/2016/07/21/python-redis-subscribe-tcp-keepalive/index.html">
-<meta property="og:site_name" content="大仙">
+<meta property="og:site_name" content="功夫猫">
 <meta property="og:description" content="如果你不知道要到哪儿去，那通常你哪儿也去不了。   这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。 1. 问题 redis subscribe有时候会有死链，但server端该连接已经不存在。  2. 复现方法 在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。240s后，（因为server端的tcp-">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2016-07-21T15:10:17.000Z">
@@ -19,7 +19,7 @@
 <meta name="twitter:title" content="python redis subscribe tcp keepalive（redis订阅保活）">
 <meta name="twitter:description" content="如果你不知道要到哪儿去，那通常你哪儿也去不了。   这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。 1. 问题 redis subscribe有时候会有死链，但server端该连接已经不存在。  2. 复现方法 在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。240s后，（因为server端的tcp-">
   
-    <link rel="alternative" href="/atom.xml" title="大仙" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="功夫猫" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -35,16 +35,16 @@
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img lazy-src="http://tp3.sinaimg.cn/5366874726/180/5733316492/1" class="js-avatar">
+			<img lazy-src="/img/1.pic.jpg" class="js-avatar">
 			
 		</a>
 
 		<hgroup>
-		  <h1 class="header-author"><a href="/">大仙</a></h1>
+		  <h1 class="header-author"><a href="/">功夫猫</a></h1>
 		</hgroup>
 
 		
-		<p class="header-subtitle">懂点开发的系统运维工程师</p>
+		<p class="header-subtitle">会十八般打杂技艺</p>
 		
 
 		
@@ -155,20 +155,20 @@
       <nav id="mobile-nav">
   	<div class="overlay">
   		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">大仙</h1>
+  		<h1 class="header-author js-mobile-header hide">功夫猫</h1>
   	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
 			
-				<img lazy-src="http://tp3.sinaimg.cn/5366874726/180/5733316492/1" class="js-avatar">
+				<img lazy-src="/img/1.pic.jpg" class="js-avatar">
 			
 			</div>
 			<hgroup>
-			  <h1 class="header-author">大仙</h1>
+			  <h1 class="header-author">功夫猫</h1>
 			</hgroup>
 			
-			<p class="header-subtitle">懂点开发的系统运维工程师</p>
+			<p class="header-subtitle">会十八般打杂技艺</p>
 			
 			<nav class="header-menu">
 				<ul>
@@ -246,7 +246,9 @@
 </blockquote>
 <a id="more"></a>
 <blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">r=redis.StrictRedis(host=self.srvip,port=self.port,password=self.passwd,socket_connect_timeout=<span class="number">15</span>,socket_keepalive=<span class="keyword">True</span>,socket_keepalive_options=&#123;</div><div class="line">            socket.TCP_KEEPIDLE:<span class="number">120</span>,</div><div class="line">            socket.TCP_KEEPCNT:<span class="number">2</span>,</div><div class="line">            socket.TCP_KEEPINTVL:<span class="number">30</span></div><div class="line">            &#125;)</div><div class="line">        rl=r.pubsub()</div><div class="line">        rl.subscribe(self.subch)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">r=redis.StrictRedis(host=self.srvip,port=self.port,password=self.passwd,socket_connect_timeout=<span class="number">15</span>,socket_keepalive=<span class="keyword">True</span>,socket_keepalive_options=&#123;</span><br><span class="line">            socket.TCP_KEEPIDLE:<span class="number">120</span>,</span><br><span class="line">            socket.TCP_KEEPCNT:<span class="number">2</span>,</span><br><span class="line">            socket.TCP_KEEPINTVL:<span class="number">30</span></span><br><span class="line">            &#125;)</span><br><span class="line">        rl=r.pubsub()</span><br><span class="line">        rl.subscribe(self.subch)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
 <p>关键参数：<strong><code>socket_keepalive</code></strong>, <strong><code>socket_keepalive_options</code></strong><br><strong><code>socket_keepalive</code></strong>为<code>True</code>时代表开启TCP保活功能。<br><strong><code>socket_keepalive_options</code></strong>值是字典格式，有如下三个参数：</p>
 <ol>
 <li><code>socket.TCP_KEEPIDLE</code>: 空闲多少秒后开始检测 </li>
@@ -255,7 +257,9 @@
 </ol>
 </blockquote>
 <h1 id="4-Redis变更日志"><a href="#4-Redis变更日志" class="headerlink" title="4. Redis变更日志"></a>4. Redis变更日志</h1><blockquote>
-<p>参考地址：<br>   <a href="https://github.com/andymccurdy/redis-py/blob/master/CHANGES" target="_blank" rel="external">https://github.com/andymccurdy/redis-py/blob/master/CHANGES</a></p>
+<p>参考地址：<br>   <a href="https://github.com/andymccurdy/redis-py/blob/master/CHANGES" target="_blank" rel="noopener">https://github.com/andymccurdy/redis-py/blob/master/CHANGES</a></p>
+</blockquote>
+<blockquote>
 <p><strong>该功能添加在2.10.0版本中：</strong></p>
 <ul>
 <li>2.10.0<ul>
@@ -344,7 +348,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 大仙
+    		&copy; 2018 功夫猫
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

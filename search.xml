@@ -83,7 +83,9 @@
 </blockquote>
 <a id="more"></a>
 <blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">r=redis.StrictRedis(host=self.srvip,port=self.port,password=self.passwd,socket_connect_timeout=<span class="number">15</span>,socket_keepalive=<span class="keyword">True</span>,socket_keepalive_options=&#123;</div><div class="line">            socket.TCP_KEEPIDLE:<span class="number">120</span>,</div><div class="line">            socket.TCP_KEEPCNT:<span class="number">2</span>,</div><div class="line">            socket.TCP_KEEPINTVL:<span class="number">30</span></div><div class="line">            &#125;)</div><div class="line">        rl=r.pubsub()</div><div class="line">        rl.subscribe(self.subch)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">r=redis.StrictRedis(host=self.srvip,port=self.port,password=self.passwd,socket_connect_timeout=<span class="number">15</span>,socket_keepalive=<span class="keyword">True</span>,socket_keepalive_options=&#123;</span><br><span class="line">            socket.TCP_KEEPIDLE:<span class="number">120</span>,</span><br><span class="line">            socket.TCP_KEEPCNT:<span class="number">2</span>,</span><br><span class="line">            socket.TCP_KEEPINTVL:<span class="number">30</span></span><br><span class="line">            &#125;)</span><br><span class="line">        rl=r.pubsub()</span><br><span class="line">        rl.subscribe(self.subch)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
 <p>关键参数：<strong><code>socket_keepalive</code></strong>, <strong><code>socket_keepalive_options</code></strong><br><strong><code>socket_keepalive</code></strong>为<code>True</code>时代表开启TCP保活功能。<br><strong><code>socket_keepalive_options</code></strong>值是字典格式，有如下三个参数：</p>
 <ol>
 <li><code>socket.TCP_KEEPIDLE</code>: 空闲多少秒后开始检测 </li>
@@ -92,7 +94,9 @@
 </ol>
 </blockquote>
 <h1 id="4-Redis变更日志"><a href="#4-Redis变更日志" class="headerlink" title="4. Redis变更日志"></a>4. Redis变更日志</h1><blockquote>
-<p>参考地址：<br>   <a href="https://github.com/andymccurdy/redis-py/blob/master/CHANGES" target="_blank" rel="external">https://github.com/andymccurdy/redis-py/blob/master/CHANGES</a></p>
+<p>参考地址：<br>   <a href="https://github.com/andymccurdy/redis-py/blob/master/CHANGES" target="_blank" rel="noopener">https://github.com/andymccurdy/redis-py/blob/master/CHANGES</a></p>
+</blockquote>
+<blockquote>
 <p><strong>该功能添加在2.10.0版本中：</strong></p>
 <ul>
 <li>2.10.0<ul>
