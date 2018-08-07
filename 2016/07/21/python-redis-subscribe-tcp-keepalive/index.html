@@ -6,18 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>python redis subscribe tcp keepalive（redis订阅保活） | 功夫猫 -- devops</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="如果你不知道要到哪儿去，那通常你哪儿也去不了。   这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。 1. 问题 redis subscribe有时候会有死链，但server端该连接已经不存在。  2. 复现方法 在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。240s后，（因为server端的tcp-">
+  <meta name="description" content="如果你不知道要到哪儿去，那通常你哪儿也去不了。  这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。 1. 问题 redis subscribe有时候会有死链，但server端该连接已经不存在。  2. 复现方法 在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。240s后，（因为server端的tcp-">
 <meta name="keywords" content="redis,subscribe,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python redis subscribe tcp keepalive（redis订阅保活）">
 <meta property="og:url" content="http://4it.cn/2016/07/21/python-redis-subscribe-tcp-keepalive/index.html">
 <meta property="og:site_name" content="功夫猫 -- devops">
-<meta property="og:description" content="如果你不知道要到哪儿去，那通常你哪儿也去不了。   这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。 1. 问题 redis subscribe有时候会有死链，但server端该连接已经不存在。  2. 复现方法 在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。240s后，（因为server端的tcp-">
+<meta property="og:description" content="如果你不知道要到哪儿去，那通常你哪儿也去不了。  这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。 1. 问题 redis subscribe有时候会有死链，但server端该连接已经不存在。  2. 复现方法 在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。240s后，（因为server端的tcp-">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2016-07-21T15:10:17.000Z">
+<meta property="og:updated_time" content="2018-08-07T10:17:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python redis subscribe tcp keepalive（redis订阅保活）">
-<meta name="twitter:description" content="如果你不知道要到哪儿去，那通常你哪儿也去不了。   这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。 1. 问题 redis subscribe有时候会有死链，但server端该连接已经不存在。  2. 复现方法 在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。240s后，（因为server端的tcp-">
+<meta name="twitter:description" content="如果你不知道要到哪儿去，那通常你哪儿也去不了。  这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。 1. 问题 redis subscribe有时候会有死链，但server端该连接已经不存在。  2. 复现方法 在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。240s后，（因为server端的tcp-">
   
     <link rel="alternative" href="/atom.xml" title="功夫猫 -- devops" type="application/atom+xml">
   
@@ -232,8 +232,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote class="blockquote-center"><p>如果你不知道要到哪儿去，那通常你哪儿也去不了。 </p>
-</blockquote>
+        <p> 如果你不知道要到哪儿去，那通常你哪儿也去不了。 </p>
 <p>这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。</p>
 <h1 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h1><blockquote>
 <p>redis subscribe有时候会有死链，但server端该连接已经不存在。</p>
