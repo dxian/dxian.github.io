@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[2016下半年计划]]></title>
-      <url>http://dxian.github.io/2016/07/21/2016%E4%B8%8B%E5%8D%8A%E5%B9%B4%E8%AE%A1%E5%88%92/</url>
+      <url>http://github.com/dxian/2016/07/21/2016%E4%B8%8B%E5%8D%8A%E5%B9%B4%E8%AE%A1%E5%88%92/</url>
       <content type="html"><![CDATA[<p> 世界上，从来，从来没有什么非做不可的事情。<br> 你的人生属于你自己，不是为了说服别人，向别人证明、夸饰、博得别人的好感而存在。<br> 无论多爱或多惧怕那个人。<br><a id="more"></a></p>
 <h3 id="2016年1月1日许下的目标"><a href="#2016年1月1日许下的目标" class="headerlink" title="2016年1月1日许下的目标"></a>2016年1月1日许下的目标</h3><ol>
 <li>成为一名开发</li>
@@ -33,7 +33,7 @@
     
     <entry>
       <title><![CDATA[我的焦虑]]></title>
-      <url>http://dxian.github.io/2016/07/21/%E6%88%91%E7%9A%84%E7%84%A6%E8%99%91/</url>
+      <url>http://github.com/dxian/2016/07/21/%E6%88%91%E7%9A%84%E7%84%A6%E8%99%91/</url>
       <content type="html"><![CDATA[<p>一个人要懂得，无论你在这个喧闹的世界上有多少同类，也无论你走到世界的任何角落，你的内心世界都只有你自己在感受，与你相依相伴的人也只有你自己，那么这个时候，你自然就知道要为自己负起责任了。</p>
 <a id="more"></a>
 <p>这些年来，我都过的很焦虑，我不知道我焦虑的是什么，我总是独自一个人在思考，想找到答案，但从来没有结果。<br>直到我开始偿试主动从外面寻找答案。从知乎，从历史，从心理，从一些名人演讲上，从宗教中。。。</p>
@@ -59,7 +59,7 @@
     
     <entry>
       <title><![CDATA[python redis subscribe tcp keepalive（redis订阅保活）]]></title>
-      <url>http://dxian.github.io/2016/07/21/python-redis-subscribe-tcp-keepalive/</url>
+      <url>http://github.com/dxian/2016/07/21/python-redis-subscribe-tcp-keepalive/</url>
       <content type="html"><![CDATA[<p> 如果你不知道要到哪儿去，那通常你哪儿也去不了。 </p>
 <p>这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。</p>
 <h1 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h1><blockquote>
@@ -84,7 +84,7 @@
 </ol>
 </blockquote>
 <h1 id="4-Redis变更日志"><a href="#4-Redis变更日志" class="headerlink" title="4. Redis变更日志"></a>4. Redis变更日志</h1><blockquote>
-<p>参考地址：<br>   <a href="https://github.com/andymccurdy/redis-py/blob/master/CHANGES" target="_blank" rel="noopener">https://github.com/andymccurdy/redis-py/blob/master/CHANGES</a></p>
+<p>参考地址：<br>   <a href="https://github.com/andymccurdy/redis-py/blob/master/CHANGES">https://github.com/andymccurdy/redis-py/blob/master/CHANGES</a></p>
 </blockquote>
 <blockquote>
 <p><strong>该功能添加在2.10.0版本中：</strong></p>
@@ -100,7 +100,7 @@
     
     <entry>
       <title><![CDATA[终于把博客搭建好了]]></title>
-      <url>http://dxian.github.io/2016/07/18/%E7%BB%88%E4%BA%8E%E6%8A%8A%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%A5%BD%E4%BA%86/</url>
+      <url>http://github.com/dxian/2016/07/18/%E7%BB%88%E4%BA%8E%E6%8A%8A%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%A5%BD%E4%BA%86/</url>
       <content type="html"><![CDATA[<h2 id="终于把博客搭建好了。"><a href="#终于把博客搭建好了。" class="headerlink" title="终于把博客搭建好了。"></a>终于把博客搭建好了。</h2><p>  折腾了一个晚上，大爱NEXT主题，简约而不简单，文档写的非常棒，而且文档分类很清晰，操作也很简单。文档写成这样，真是我等学习的楷模啊。<br>  在此之前，我使用的是liyia主题，但试用了一下NEXT主题后，就喜欢上这个了，为什么选择呢？</p>
 <p>  因为：<br>    有文章目录生成功能。<br>    帮助文档写的好。<br>    第三方很多功能都包含了，容易配置。<br><a id="more"></a></p>
 <h2 id="折腾了哪些内容呢？"><a href="#折腾了哪些内容呢？" class="headerlink" title="折腾了哪些内容呢？"></a>折腾了哪些内容呢？</h2><p>   文章阅读统计<br>   分享功能<br>   百度统计</p>
@@ -112,7 +112,7 @@
     
     <entry>
       <title><![CDATA[这是我使用hexo发的第一篇文章]]></title>
-      <url>http://dxian.github.io/2016/07/18/%E8%BF%99%E6%98%AF%E6%88%91%E4%BD%BF%E7%94%A8hexo%E5%8F%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      <url>http://github.com/dxian/2016/07/18/%E8%BF%99%E6%98%AF%E6%88%91%E4%BD%BF%E7%94%A8hexo%E5%8F%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
       <content type="html"><![CDATA[<p>2014年的时候，我一直都在51cto发表文章。<br>但是总觉得不太爽，想搭建一个自己的博客。<br>后来，我使用boblog，刚搭建好时，还选了个漂这的模板，但实在是没什么玩的，把自己的博客迁上去后，就没再更新过了。<br>后来，玩过discuz，虽然主要是论坛，但我也弄了个漂亮的模板，把首页弄成了blog的样式，不过，总觉得缺了点什么，也许是太重了吧。<br>昨天，我又把搭建自己的博客提上了议程，使用wordpress搭了个博客，不过，还是觉得缺了些什么。<br>到底缺了点什么呢？<br><a id="more"></a><br>直到我了解了hexo，markdown。<br>我明白了，这就是我想要的。<br>geek精神！  markdown+git，写博客就像写代码一样，美不可言！<br>爱国情怀！  毕竟是国人开发的，心里舒服。</p>
 <p>主题选了好久…<br>最后选了NEXT，因为他的帮助文档写的太好了，一下就喜欢上了。而且它的侧边能显示目录结构，这对于写很长的文档的时候，是很有用的。</p>
 <p>接下来学习markdown语法，这真是一个很炫的东东。</p>
