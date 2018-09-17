@@ -108,7 +108,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/sad/" style="font-size: 10px;">sad</a> <a href="/tags/subscribe/" style="font-size: 10px;">subscribe</a> <a href="/tags/心情/" style="font-size: 10px;">心情</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+						<a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/sad/" style="font-size: 10px;">sad</a> <a href="/tags/subscribe/" style="font-size: 10px;">subscribe</a> <a href="/tags/心情/" style="font-size: 10px;">心情</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
 					</div>
 				</section>
 				
@@ -187,6 +187,80 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-python-redis-subscribe-tcp-keepalive" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/21/python-redis-subscribe-tcp-keepalive/" class="article-date">
+  	<time datetime="2016-07-21T03:47:32.000Z" itemprop="datePublished">2016-07-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/21/python-redis-subscribe-tcp-keepalive/">python redis subscribe tcp keepalive（redis订阅保活）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 如果你不知道要到哪儿去，那通常你哪儿也去不了。 </p>
+<p>这三天，一直在弄一件事情，就是redis订阅时，怎么在订阅的连接上，给server端发保活报文。</p>
+<h1 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h1><blockquote>
+<p>redis subscribe有时候会有死链，但server端该连接已经不存在。</p>
+</blockquote>
+<h1 id="2-复现方法"><a href="#2-复现方法" class="headerlink" title="2. 复现方法"></a>2. 复现方法</h1><blockquote>
+<p>在redis订阅成功后，client上添加iptables规则，把与server端通信报文丢弃。<br>240s后，（因为server端的tcp-keepalive 设置的是120s），server端因为保活无回应，关闭了该连接。<br>而client端一直保持一个established的连接，且一直保持，永不断开。</p>
+</blockquote>
+<h1 id="3-解决方法"><a href="#3-解决方法" class="headerlink" title="3. 解决方法"></a>3. 解决方法</h1><blockquote>
+<p>把py-redis版本升级到2.10.3后，该版本拥有socket-keepalive参数，能够在订阅后对该通道保活。<br>配置参数如下：</p>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/subscribe/">subscribe</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/redis/">redis</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/21/python-redis-subscribe-tcp-keepalive/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-终于把博客搭建好了" class="article article-type-post" itemscope itemprop="blogPost">
   
