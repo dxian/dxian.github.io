@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="功夫猫--devops">
 <meta property="og:description" content="2018年,是颓废之年, 业余不再学习, 工作没有项目.    恋爱失败,颠覆了我的恋爱观炒股亏损15W找工作8次,失败了前七次">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-17T02:52:28.000Z">
+<meta property="og:updated_time" content="2018-09-18T05:01:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2018年之废">
 <meta name="twitter:description" content="2018年,是颓废之年, 业余不再学习, 工作没有项目.    恋爱失败,颠覆了我的恋爱观炒股亏损15W找工作8次,失败了前七次">
@@ -312,6 +312,34 @@
 
 
 
+
+        <!-- 目录内容 -->
+        
+            <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+            </p>
+            <div id="toc-article" class="toc-article">
+                <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+                <strong class="toc-title">文章目录</strong>
+                
+           </div>
+           <script type="text/javascript">
+            function showToc(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:block");
+                show_toc_btn.setAttribute("style","display:none");
+                };
+            function showBtn(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:none");
+                show_toc_btn.setAttribute("style","display:block");
+                };
+           </script>
+             
+        <!-- 目录内容结束 -->
 </div>
       <footer id="footer">
   <div class="outer">
