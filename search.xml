@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title><![CDATA[Python学习计划]]></title>
+      <url>http://github.com/dxian/2018/09/23/Python%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</url>
+      <content type="html"><![CDATA[<p>学习步骤：  </p>
+<h2 id="1-Python基础语法"><a href="#1-Python基础语法" class="headerlink" title="1. Python基础语法"></a>1. Python基础语法</h2><pre><code>内容：运算符，字符串列表字典， 条件与循环， 文件操作， os模块， 
+练习：编写nginx管理脚本
+</code></pre><h2 id="2-python-面向对象"><a href="#2-python-面向对象" class="headerlink" title="2. python 面向对象"></a>2. python 面向对象</h2><pre><code>内容：类的继承， 内置方法  
+练习：编写脚本获取服务器信息、定时任务信息的脚本 
+</code></pre><h2 id="3-python-Flask框架"><a href="#3-python-Flask框架" class="headerlink" title="3. python Flask框架"></a>3. python Flask框架</h2><pre><code>数据库操作：sqlalchemy,  连表查询， 一对一/一对多/多对多， 左关联/右关联, 子查询
+get/post说明， flask参数获取
+练习：api开发：1.获取服务器的系统信息，执行shell命令
+                     2.获取和修改定任时任务  
+</code></pre><h2 id="4-前端CSS-HTML-JS-Jquery-Bootstrap"><a href="#4-前端CSS-HTML-JS-Jquery-Bootstrap" class="headerlink" title="4. 前端CSS/HTML/JS/Jquery/Bootstrap"></a>4. 前端CSS/HTML/JS/Jquery/Bootstrap</h2><pre><code>内容：可以布局，改样式， 触发事件。 
+练习： 模拟cmdb数据，点击查看按钮弹框显示详情。
+</code></pre><h2 id="5-前端框架Vue学习"><a href="#5-前端框架Vue学习" class="headerlink" title="5. 前端框架Vue学习"></a>5. 前端框架Vue学习</h2><pre><code>内容：vex, axios, 双向数据绑定， 表单校验，
+</code></pre><h2 id="6-前后端结合，-做登陆认证界面"><a href="#6-前后端结合，-做登陆认证界面" class="headerlink" title="6. 前后端结合， 做登陆认证界面"></a>6. 前后端结合， 做登陆认证界面</h2><pre><code>内容：Ajax讲解，session讲解， 前后端通信标准， Jinja2语法   
+</code></pre><h2 id="7-展示主机信息，并能做修改"><a href="#7-展示主机信息，并能做修改" class="headerlink" title="7. 展示主机信息，并能做修改"></a>7. 展示主机信息，并能做修改</h2><pre><code>内容：支持搜索，编辑，删除等常用表单功能
+</code></pre><h2 id="8-开发远程执行shell命令功能"><a href="#8-开发远程执行shell命令功能" class="headerlink" title="8. 开发远程执行shell命令功能"></a>8. 开发远程执行shell命令功能</h2><pre><code>异步任务celery讲解, ansible讲解  
+</code></pre><h2 id="9-展示定时任务信息"><a href="#9-展示定时任务信息" class="headerlink" title="9. 展示定时任务信息"></a>9. 展示定时任务信息</h2><h2 id="10-设计思考"><a href="#10-设计思考" class="headerlink" title="10. 设计思考"></a>10. 设计思考</h2><pre><code>日志告警设计思考  
+devops核心(资源、动作、状态)  
+工单设计思考  
+权限设计思考  
+cmdb设计思考  
+发布设计思考(参考walle)  
+和公有云结合思考  
+和容器结合思考    
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[找到自己]]></title>
       <url>http://github.com/dxian/2018/09/22/%E6%89%BE%E5%88%B0%E8%87%AA%E5%B7%B1/</url>
       <content type="html"><![CDATA[<p>我曾以为我拨开了迷雾。 没成想，只是一直循环而已。  </p>
