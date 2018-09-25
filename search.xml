@@ -11,7 +11,8 @@
 练习：编写nginx管理脚本
 </code></pre><h2 id="2-python-面向对象"><a href="#2-python-面向对象" class="headerlink" title="2. python 面向对象"></a>2. python 面向对象</h2><pre><code>内容：类的继承， 内置方法  
 练习：编写脚本获取服务器信息、定时任务信息的脚本 
-</code></pre><h2 id="3-python-Flask框架"><a href="#3-python-Flask框架" class="headerlink" title="3. python Flask框架"></a>3. python Flask框架</h2><pre><code>数据库操作：sqlalchemy,  连表查询， 一对一/一对多/多对多， 左关联/右关联, 子查询
+</code></pre><a id="more"></a>
+<h2 id="3-python-Flask框架"><a href="#3-python-Flask框架" class="headerlink" title="3. python Flask框架"></a>3. python Flask框架</h2><pre><code>数据库操作：sqlalchemy,  连表查询， 一对一/一对多/多对多， 左关联/右关联, 子查询
 get/post说明， flask参数获取
 练习：api开发：1.获取服务器的系统信息，执行shell命令
                      2.获取和修改定任时任务  
